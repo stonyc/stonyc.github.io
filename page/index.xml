@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on Tony Chun</title>
+    <link>/page/</link>
+    <description>Recent content in Pages on Tony Chun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/page/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Resume</title>
+      <link>/page/resume/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/page/resume/</guid>
+      <description>Current versions of my industry resume and academic CV are provided in PDF format below:
+Resume
+CV
+My LinkedIn profile is also updated regularly and has embedded links to both my resume and CV as well.</description>
+    </item>
+    
+  </channel>
+</rss>
