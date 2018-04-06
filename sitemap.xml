@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/project/area-plots-and-histograms-for-multiple-distributions/</loc>
+    <loc>/chunk/area-plots-and-histograms-for-multiple-distributions/</loc>
     <lastmod>2018-04-06T00:00:00+00:00</lastmod>
   </url>
   
@@ -27,30 +27,18 @@
   </url>
   
   <url>
-    <loc>/tags/area/</loc>
-    <lastmod>2018-04-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>/chunk/</loc>
+    <lastmod>2018-04-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/categories/chunks/</loc>
-    <lastmod>2018-04-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/data/</loc>
-    <lastmod>2018-04-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/density/</loc>
     <lastmod>2018-04-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -62,19 +50,13 @@
   </url>
   
   <url>
-    <loc>/categories/ggplot/</loc>
+    <loc>/tags/ggplot/</loc>
     <lastmod>2018-04-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/hello/</loc>
-    <lastmod>2018-04-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/histograms/</loc>
     <lastmod>2018-04-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -92,13 +74,7 @@
   </url>
   
   <url>
-    <loc>/project/</loc>
-    <lastmod>2018-04-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/r/</loc>
+    <loc>/tags/r/</loc>
     <lastmod>2018-04-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

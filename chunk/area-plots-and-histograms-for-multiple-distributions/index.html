@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Area Plots and Histograms for Multiple Distributions</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Raleway', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: black;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.38" />
+        
+
+        
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116926668-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-116926668-1');
+        </script>
+        
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Area Plots and Histograms for Multiple Distributions</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Home</a></li>
+                            
+                                <li><a href="/post/">Posts</a></li>
+                            
+                                <li><a href="/chunk/">Chunks</a></li>
+                            
+                                <li><a href="https://github.com/stonyc/notebooks/">Python</a></li>
+                            
+                                <li><a href="/resume/">Resume</a></li>
+                            
+                                <li><a href="/contact/">Contact</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:stonyc@umich.edu"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/stonyc/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/stonyc/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/stonyc/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/chunk/area-plots-and-histograms-for-multiple-distributions/">Area Plots and Histograms for Multiple Distributions</a></h4>
+    <h5>April 6, 2018</h5>
+    
+    <a href="/tags/r"><kbd class="item-tag">R</kbd></a>
+    
+    <a href="/tags/ggplot"><kbd class="item-tag">ggplot</kbd></a>
+    
+    <a href="/tags/visualization"><kbd class="item-tag">visualization</kbd></a>
+    
+
+</div>
+
+
+    <br> <div class="text-justify"><p>As a first post, I thought that I would go over a few different ways to visualize multiple distributions using histograms and area plots, as well as how different parameters might change how you view and interpret that data. In addition, perhaps you might learn from mistakes that I made along the way.</p>
+<p>First, let’s load some required packages:</p>
+<pre class="r"><code>require(&quot;ggplot2&quot;)</code></pre>
+<pre><code>## Loading required package: ggplot2</code></pre>
+<p>Now, let’s generate three slightly different normal distributions for this example:</p>
+<pre class="r"><code>d &lt;- data.frame(
+    id=c(rep(&quot;A&quot;,times=2000),
+        rep(&quot;B&quot;,times=1000),
+        rep(&quot;C&quot;,times=500)
+        ), 
+    n=c(floor(rnorm(2000,mean=100,sd=20)),
+        floor(rnorm(1000,mean=100,sd=20)),
+        floor(rnorm(500,mean=100,sd=10)))
+    )</code></pre>
+<p>And just to get an overview of what we will be working with:</p>
+<pre class="r"><code>summary(d$n[d$id==&quot;A&quot;])</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   30.00   85.00  100.00   99.44  113.25  165.00</code></pre>
+<pre class="r"><code>summary(d$n[d$id==&quot;B&quot;])</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   37.00   85.75   99.00   98.88  113.00  168.00</code></pre>
+<pre class="r"><code>summary(d$n[d$id==&quot;C&quot;])</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   70.00   92.75   99.00   99.02  105.00  124.00</code></pre>
+<p>Great, we’ve got some numbers. But, we’d like to take a look at the data visually… so, let’s start with a basic histogram:</p>
+<pre class="r"><code>ggplot(data=d, aes(x=n, fill=id)) + geom_histogram(binwidth=5)</code></pre>
+<p><img src="/chunk/2018-04-06-area-plots-and-histograms-for-multiple-distributions_files/figure-html/unnamed-chunk-4-1.png" width="384" /></p>
+<p>Note that the default behavior of geom_histogram() is to “stack” the counts in each distribution over a bin, which enables effective comparison of the relative number of counts in each bin, but makes interpreting the raw number of counts in each bin (in say, distribution A) more difficult. Since the default behavior of geom_histogram is to “stack”, let’s try “identity” and see what happens:</p>
+<pre class="r"><code>ggplot(data=d, aes(x=n, fill=id)) + geom_histogram(binwidth=5, position=&quot;identity&quot;)</code></pre>
+<p><img src="/chunk/2018-04-06-area-plots-and-histograms-for-multiple-distributions_files/figure-html/unnamed-chunk-5-1.png" width="384" /></p>
+<p>So, although we now get the raw counts in each bin for distributions A, B and C… we may have the problem where some of the underlying counts in certain bins are hidden by other counts. Maybe we can try to modify the transparency (or “alpha” in ggplot2) of each histogram and see if that helps:</p>
+<pre class="r"><code>ggplot(data=d, aes(x=n, fill=id)) + geom_histogram(binwidth=5, position=&quot;identity&quot;, alpha=0.5)</code></pre>
+<p><img src="/chunk/2018-04-06-area-plots-and-histograms-for-multiple-distributions_files/figure-html/unnamed-chunk-6-1.png" width="384" /></p>
+<p>That’s a bit better, but let’s look at all three plots together to see how “stack” positioning differs from “identity”, as well as how modifying the “alpha” parameter help (or hurt) our ability to visualize the three different distributions:</p>
+<p><img src="/chunk/2018-04-06-area-plots-and-histograms-for-multiple-distributions_files/figure-html/unnamed-chunk-7-1.png" width="384" /><img src="/chunk/2018-04-06-area-plots-and-histograms-for-multiple-distributions_files/figure-html/unnamed-chunk-7-2.png" width="384" /><img src="/chunk/2018-04-06-area-plots-and-histograms-for-multiple-distributions_files/figure-html/unnamed-chunk-7-3.png" width="384" /></p>
+<p>Now, to be fair, if we were interested in displaying more than one distribution together on one plot, a CDF or density plot might be more effective. However, sometimes CDF plots can be hard to interpret, and density plots transform the data and represent the relative abundance of counts in each bin rather than the counts themselves. Therefore, if we are insistent upon seeing the distributions and their counts on a single plot, we have a few more options.</p>
+<p>Let’s move on to area plots:</p>
+<pre class="r"><code>ggplot(data=d, aes(x=n, fill=id)) + geom_area(bins=30, stat=&quot;bin&quot;) + labs(title=&quot;area&quot;)</code></pre>
+<p><img src="/chunk/2018-04-06-area-plots-and-histograms-for-multiple-distributions_files/figure-html/unnamed-chunk-8-1.png" width="384" /></p>
+<p>But again, if we are interested in the raw counts in each bin of the three distributions, the default behavior of geom_area() to “stack” the counts is not desirable. What we would like is the raw counts in each bin :</p>
+<pre class="r"><code>ggplot(data=d, aes(x=n, fill=id)) + geom_freqpoly(bins=30) + labs(title=&quot;frequency&quot;)</code></pre>
+<p><img src="/chunk/2018-04-06-area-plots-and-histograms-for-multiple-distributions_files/figure-html/unnamed-chunk-9-1.png" width="384" /></p>
+<p>What if we could take the line elements of the frequency plot and combine that with the visual aesthetics of the area plot? First, I’ll introduce the round-about method that I trial and errored my way to get a solution, and then provide a much simpler and elegant solution provided within the default framework of the area plot functionality of ggplot2:</p>
+<p>First, the long way. Build the frequency distributions for each sample from the freq_poly() output:</p>
+<pre class="r"><code>gg.data &lt;- data.frame(
+    ggplot_build(
+        ggplot(data=d, aes(x=n, color=id)) + geom_freqpoly(bins=30)
+        )$data
+    )</code></pre>
+<p>Here’s a snippet of that data:</p>
+<pre class="r"><code>head(gg.data)</code></pre>
+<pre><code>##    colour y count        x     xmin     xmax    width      density
+## 1 #F8766D 0     0 23.79310 21.41379 26.17241 4.758621 0.0000000000
+## 2 #F8766D 1     1 28.55172 26.17241 30.93103 4.758621 0.0001050725
+## 3 #F8766D 0     0 33.31034 30.93103 35.68966 4.758621 0.0000000000
+## 4 #F8766D 1     1 38.06897 35.68966 40.44828 4.758621 0.0001050725
+## 5 #F8766D 5     5 42.82759 40.44828 45.20690 4.758621 0.0005253623
+## 6 #F8766D 7     7 47.58621 45.20690 49.96552 4.758621 0.0007355072
+##        ncount  ndensity PANEL group size linetype alpha
+## 1 0.000000000   0.00000     1     1  0.5        1    NA
+## 2 0.004975124  47.34946     1     1  0.5        1    NA
+## 3 0.000000000   0.00000     1     1  0.5        1    NA
+## 4 0.004975124  47.34946     1     1  0.5        1    NA
+## 5 0.024875622 236.74730     1     1  0.5        1    NA
+## 6 0.034825871 331.44622     1     1  0.5        1    NA</code></pre>
+<p>Now that you have the counts at each bin position (x-variable), you can use those coordinates to generate a filled area plot, but with the raw counts in each bin instead of the stacked counts:</p>
+<pre class="r"><code>ggplot(data=gg.data, aes(x=x, y=count, group=group)) +
+    geom_line(aes(color=colour)) +
+    geom_polygon(aes(fill=colour)) +
+    scale_fill_manual(name=&quot;id&quot;, labels=c(&quot;A&quot;,&quot;B&quot;,&quot;C&quot;), values=unique(gg.data$colour)) +
+    scale_color_manual(name=&quot;id&quot;, labels=c(&quot;A&quot;,&quot;B&quot;,&quot;C&quot;), values=unique(gg.data$colour))</code></pre>
+<p><img src="/chunk/2018-04-06-area-plots-and-histograms-for-multiple-distributions_files/figure-html/unnamed-chunk-12-1.png" width="384" /></p>
+<p>Now, the easy way. From my multiple hours of trial and error, please consider this a lesson in thoroughly reading and understanding what parameters are available to you. You might find that the functionality that you thought was missing, was hiding in plain sight:</p>
+<pre class="r"><code>ggplot(data=d, aes(x=n, fill=id)) + 
+    geom_area(bins=30, stat=&quot;bin&quot;, position=&quot;identity&quot;) + 
+    labs(title=&quot;area&quot;)</code></pre>
+<p><img src="/chunk/2018-04-06-area-plots-and-histograms-for-multiple-distributions_files/figure-html/unnamed-chunk-13-1.png" width="384" /></p>
+<p>And to play with visibility a bit:</p>
+<pre class="r"><code>ggplot(data=d, aes(x=n, fill=id, alpha=id)) + 
+    geom_area(bins=30, stat=&quot;bin&quot;, position=&quot;identity&quot;) + 
+    scale_alpha_manual(values=c(0.25,0.5,1.0)) + 
+    labs(title=&quot;area&quot;)</code></pre>
+<p><img src="/chunk/2018-04-06-area-plots-and-histograms-for-multiple-distributions_files/figure-html/unnamed-chunk-14-1.png" width="384" /></p>
+<p>Now, to view the different plots together. I’ve also included representative CDF and density plots so that the different ways to visualize count (or density data) might be visualized):</p>
+<p><img src="/chunk/2018-04-06-area-plots-and-histograms-for-multiple-distributions_files/figure-html/unnamed-chunk-15-1.png" width="384" /><img src="/chunk/2018-04-06-area-plots-and-histograms-for-multiple-distributions_files/figure-html/unnamed-chunk-15-2.png" width="384" /><img src="/chunk/2018-04-06-area-plots-and-histograms-for-multiple-distributions_files/figure-html/unnamed-chunk-15-3.png" width="384" /><img src="/chunk/2018-04-06-area-plots-and-histograms-for-multiple-distributions_files/figure-html/unnamed-chunk-15-4.png" width="384" /><img src="/chunk/2018-04-06-area-plots-and-histograms-for-multiple-distributions_files/figure-html/unnamed-chunk-15-5.png" width="384" /><img src="/chunk/2018-04-06-area-plots-and-histograms-for-multiple-distributions_files/figure-html/unnamed-chunk-15-6.png" width="384" /></p>
+<p>Each of the plots tells a different different story from the others, some more dramatically than others. For example, it is clearer from the density and cumulative distribution plots that samples A and B are more similarly distributed to each other than they are to C. However, the number of counts in each bin are retained by the histograms and area plots. In the end, a combination of multiple plots may be required to more clearly describe the similarity or differences of various distribtuions.</p>
+</div>
+
+    
+    
+
+    
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

@@ -12,38 +12,20 @@
     
     
     <item>
-      <title>Area</title>
-      <link>/tags/area/</link>
-      <pubDate>Fri, 06 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/area/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Data</title>
-      <link>/tags/data/</link>
-      <pubDate>Fri, 06 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/data/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Density</title>
-      <link>/tags/density/</link>
-      <pubDate>Fri, 06 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/density/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>General</title>
       <link>/tags/general/</link>
       <pubDate>Fri, 06 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/general/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ggplot</title>
+      <link>/tags/ggplot/</link>
+      <pubDate>Fri, 06 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ggplot/</guid>
       <description></description>
     </item>
     
@@ -57,11 +39,11 @@
     </item>
     
     <item>
-      <title>Histograms</title>
-      <link>/tags/histograms/</link>
+      <title>R</title>
+      <link>/tags/r/</link>
       <pubDate>Fri, 06 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/histograms/</guid>
+      <guid>/tags/r/</guid>
       <description></description>
     </item>
     
