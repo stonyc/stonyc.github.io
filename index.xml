@@ -2,112 +2,61 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tony Chun</title>
-    <link>https://stonyc.github.io/</link>
+    <link>/</link>
     <description>Recent content on Tony Chun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Apr 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://stonyc.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Project 1</title>
-      <link>https://stonyc.github.io/project/project1/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>Area Plots and Histograms for Multiple Distributions</title>
+      <link>/project/area-plots-and-histograms-for-multiple-distributions/</link>
+      <pubDate>Fri, 06 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://stonyc.github.io/project/project1/</guid>
-      <description></description>
+      <guid>/project/area-plots-and-histograms-for-multiple-distributions/</guid>
+      <description>As a first post, I thought that I would go over a few different ways to visualize multiple distributions using histograms and area plots, as well as how different parameters might change how you view and interpret that data. In addition, perhaps you might learn from mistakes that I made along the way.
+First, let’s load some required packages:
+require(&amp;quot;ggplot2&amp;quot;)## Loading required package: ggplot2Now, let’s generate three slightly different normal distributions for this example:</description>
     </item>
     
     <item>
-      <title>Project 2</title>
-      <link>https://stonyc.github.io/project/project2/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>First Post</title>
+      <link>/post/first-post/</link>
+      <pubDate>Fri, 06 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://stonyc.github.io/project/project2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Project 3</title>
-      <link>https://stonyc.github.io/project/project3/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://stonyc.github.io/project/project3/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Project 4</title>
-      <link>https://stonyc.github.io/project/project4/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://stonyc.github.io/project/project4/</guid>
-      <description></description>
+      <guid>/post/first-post/</guid>
+      <description>Welcome. Hello, and welcome to my site. Here, you will find some unorganized thoughts as well as some coding snippets, or chunks, as I find something interesting or useful.
+Background My undergraduate degree was in Biology, and I was always interested in learning about how the structure of things translated to function. So, in many ways, my interest in coding and programming evolved quite naturally from this phylogenetic desire to classify and understand the organisms that populate our world.</description>
     </item>
     
     <item>
       <title>Contact</title>
-      <link>https://stonyc.github.io/contact/</link>
+      <link>/contact/</link>
       <pubDate>Thu, 05 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://stonyc.github.io/contact/</guid>
+      <guid>/contact/</guid>
       <description>The most direct way to reach me is through the e-mail link provided at the top of this site, followed by sending me a message on LinkedIn which I check regularly. Although I recognize its utility, I have not yet fully embraced Twitter. </description>
     </item>
     
     <item>
       <title>Resume</title>
-      <link>https://stonyc.github.io/resume/</link>
+      <link>/resume/</link>
       <pubDate>Thu, 05 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://stonyc.github.io/resume/</guid>
+      <guid>/resume/</guid>
       <description>Updated versions of my industry resume and academic CV are provided below in PDF format: Resume CV My LinkedIn profile contains embedded PDFs of my resume and CV, as well. </description>
     </item>
     
     <item>
-      <title>Creating a New Theme</title>
-      <link>https://stonyc.github.io/post/creating-a-new-theme/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      <title></title>
+      <link>/post/2018-04-06-first-post/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://stonyc.github.io/post/creating-a-new-theme/</guid>
-      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
-We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
-    </item>
-    
-    <item>
-      <title>(Hu)go Template Primer</title>
-      <link>https://stonyc.github.io/post/goisforlovers/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://stonyc.github.io/post/goisforlovers/</guid>
-      <description>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
-This document is a brief primer on using go templates.</description>
-    </item>
-    
-    <item>
-      <title>Getting Started with Hugo</title>
-      <link>https://stonyc.github.io/post/hugoisforlovers/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://stonyc.github.io/post/hugoisforlovers/</guid>
-      <description>Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
-Save it somewhere specific as we will be using it in the next step.
-More complete instructions are available at installing hugo
-Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
-Follow the following steps:
- Clone the hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:</description>
-    </item>
-    
-    <item>
-      <title>Migrate from Jekyll</title>
-      <link>https://stonyc.github.io/post/migrate-from-jekyll/</link>
-      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://stonyc.github.io/post/migrate-from-jekyll/</guid>
-      <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
-▾ &amp;lt;root&amp;gt;/ ▾ images/ logo.png  should become
-▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
+      <guid>/post/2018-04-06-first-post/</guid>
+      <description>First Postcode{white-space: pre;}pre:not([class]) {background-color: white;}if (window.hljs) {hljs.configure({languages: []});hljs.initHighlightingOnLoad();if (document.readyState &amp;&amp; document.readyState === &#34;complete&#34;) {window.setTimeout(function() { hljs.initHighlighting(); }, 0);}}h1 {font-size: 34px;}h1.title {font-size: 38px;}h2 {font-size: 30px;}h3 {font-size: 24px;}h4 {font-size: 18px;}h5 {font-size: 16px;}h6 {font-size: 12px;}.</description>
     </item>
     
   </channel>

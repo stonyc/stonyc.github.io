@@ -1,0 +1,9 @@
+---
+title: Area Plots and Histograms for Multiple Distributions
+author: ~
+date: '2018-04-06'
+slug: area-plots-and-histograms-for-multiple-distributions
+categories: []
+tags: []
+---
+

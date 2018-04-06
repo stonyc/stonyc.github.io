@@ -2,147 +2,75 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Tony Chun</title>
-    <link>https://stonyc.github.io/tags/</link>
+    <link>/tags/</link>
     <description>Recent content in Tags on Tony Chun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 02 Apr 2014 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Apr 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://stonyc.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Bootstrap</title>
-      <link>https://stonyc.github.io/tags/bootstrap/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>Area</title>
+      <link>/tags/area/</link>
+      <pubDate>Fri, 06 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://stonyc.github.io/tags/bootstrap/</guid>
+      <guid>/tags/area/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Css</title>
-      <link>https://stonyc.github.io/tags/css/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>Data</title>
+      <link>/tags/data/</link>
+      <pubDate>Fri, 06 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://stonyc.github.io/tags/css/</guid>
+      <guid>/tags/data/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Development</title>
-      <link>https://stonyc.github.io/tags/development/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <title>Density</title>
+      <link>/tags/density/</link>
+      <pubDate>Fri, 06 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://stonyc.github.io/tags/development/</guid>
+      <guid>/tags/density/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Go</title>
-      <link>https://stonyc.github.io/tags/go/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      <title>General</title>
+      <link>/tags/general/</link>
+      <pubDate>Fri, 06 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://stonyc.github.io/tags/go/</guid>
+      <guid>/tags/general/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Golang</title>
-      <link>https://stonyc.github.io/tags/golang/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      <title>Hello</title>
+      <link>/tags/hello/</link>
+      <pubDate>Fri, 06 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://stonyc.github.io/tags/golang/</guid>
+      <guid>/tags/hello/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Highlight Js</title>
-      <link>https://stonyc.github.io/tags/highlight-js/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>Histograms</title>
+      <link>/tags/histograms/</link>
+      <pubDate>Fri, 06 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://stonyc.github.io/tags/highlight-js/</guid>
+      <guid>/tags/histograms/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Html</title>
-      <link>https://stonyc.github.io/tags/html/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>Visualization</title>
+      <link>/tags/visualization/</link>
+      <pubDate>Fri, 06 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://stonyc.github.io/tags/html/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hugo</title>
-      <link>https://stonyc.github.io/tags/hugo/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://stonyc.github.io/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Jekyll</title>
-      <link>https://stonyc.github.io/tags/jekyll/</link>
-      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://stonyc.github.io/tags/jekyll/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Js</title>
-      <link>https://stonyc.github.io/tags/js/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://stonyc.github.io/tags/js/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Responsive</title>
-      <link>https://stonyc.github.io/tags/responsive/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://stonyc.github.io/tags/responsive/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Static Site Generator</title>
-      <link>https://stonyc.github.io/tags/static-site-generator/</link>
-      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://stonyc.github.io/tags/static-site-generator/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Syntax Highlighting</title>
-      <link>https://stonyc.github.io/tags/syntax-highlighting/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://stonyc.github.io/tags/syntax-highlighting/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Template</title>
-      <link>https://stonyc.github.io/tags/template/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://stonyc.github.io/tags/template/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Themes</title>
-      <link>https://stonyc.github.io/tags/themes/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://stonyc.github.io/tags/themes/</guid>
+      <guid>/tags/visualization/</guid>
       <description></description>
     </item>
     

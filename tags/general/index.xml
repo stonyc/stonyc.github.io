@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>General on Tony Chun</title>
+    <link>/tags/general/</link>
+    <description>Recent content in General on Tony Chun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 06 Apr 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/general/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>First Post</title>
+      <link>/post/first-post/</link>
+      <pubDate>Fri, 06 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/first-post/</guid>
+      <description>Welcome. Hello, and welcome to my site. Here, you will find some unorganized thoughts as well as some coding snippets, or chunks, as I find something interesting or useful.
+Background My undergraduate degree was in Biology, and I was always interested in learning about how the structure of things translated to function. So, in many ways, my interest in coding and programming evolved quite naturally from this phylogenetic desire to classify and understand the organisms that populate our world.</description>
+    </item>
+    
+  </channel>
+</rss>

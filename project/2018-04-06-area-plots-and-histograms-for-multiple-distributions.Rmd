@@ -1,0 +1,135 @@
+---
+title: Area Plots and Histograms for Multiple Distributions
+author: Tony Chun
+date: '2018-04-06'
+slug: area-plots-and-histograms-for-multiple-distributions
+categories: ["chunks", "R", "ggplot"]
+tags: ["visualization", "histograms", "density", "area", "data"]
+---
+
+As a first post, I thought that I would go over a few different ways to visualize multiple distributions using histograms and area plots, as well as how different parameters might change how you view and interpret that data. In addition, perhaps you might learn from mistakes that I made along the way.
+
+First, let's load some required packages:
+```{r}
+require("ggplot2")
+```
+
+Now, let's generate three slightly different normal distributions for this example:
+
+```{r}
+d <- data.frame(
+	id=c(rep("A",times=2000),
+		rep("B",times=1000),
+		rep("C",times=500)
+		), 
+	n=c(floor(rnorm(2000,mean=100,sd=20)),
+		floor(rnorm(1000,mean=100,sd=20)),
+		floor(rnorm(500,mean=100,sd=10)))
+	)
+```
+
+And just to get an overview of what we will be working with:
+
+```{r}
+summary(d$n[d$id=="A"])
+summary(d$n[d$id=="B"])
+summary(d$n[d$id=="C"])
+```
+
+Great, we've got some numbers. But, we'd like to take a look at the data visually... so, let's start with a basic histogram:
+
+```{r, fig.width=4, fig.height=4}
+ggplot(data=d, aes(x=n, fill=id)) + geom_histogram(binwidth=5)
+```
+
+Note that the default behavior of geom_histogram() is to "stack" the counts in each distribution over a bin, which enables effective comparison of the relative number of counts in each bin, but makes interpreting the raw number of counts in each bin (in say, distribution A) more difficult. Since the default behavior of geom_histogram is to "stack", let's try "identity" and see what happens:
+
+```{r, fig.width=4, fig.height=4}
+ggplot(data=d, aes(x=n, fill=id)) + geom_histogram(binwidth=5, position="identity")
+```
+
+So, although we now get the raw counts in each bin for distributions A, B and C... we may have the problem where some of the underlying counts in certain bins are hidden by other counts. Maybe we can try to modify the transparency (or "alpha" in ggplot2) of each histogram and see if that helps:
+
+```{r, fig.width=4, fig.height=4}
+ggplot(data=d, aes(x=n, fill=id)) + geom_histogram(binwidth=5, position="identity", alpha=0.5)
+```
+
+That's a bit better, but let's look at all three plots together to see how "stack" positioning differs from "identity", as well as how modifying the "alpha" parameter help (or hurt) our ability to visualize the three different distributions:
+
+```{r, fig.width=4, fig.height=4, echo=FALSE}
+ggplot(data=d, aes(x=n, fill=id)) + geom_histogram(binwidth=5) + labs(title="stack")
+ggplot(data=d, aes(x=n, fill=id)) + geom_histogram(binwidth=5, position="identity")
+ggplot(data=d, aes(x=n, fill=id)) + geom_histogram(binwidth=5, position="identity", alpha=0.5) + labs(title="identity")
+```
+
+Now, to be fair, if we were interested in displaying more than one distribution together on one plot, a CDF or density plot might be more effective. However, sometimes CDF plots can be hard to interpret, and density plots transform the data and represent the relative abundance of counts in each bin rather than the counts themselves. Therefore, if we are insistent upon seeing the distributions and their counts on a single plot, we have a few more options.
+
+Let's move on to area plots:
+
+```{r, fig.width=4, fig.height=4}
+ggplot(data=d, aes(x=n, fill=id)) + geom_area(bins=30, stat="bin") + labs(title="area")
+```
+
+But again, if we are interested in the raw counts in each bin of the three distributions, the default behavior of geom_area() to "stack" the counts is not desirable. What we would like is the raw counts in each bin :
+
+```{r, fig.width=4, fig.height=4}
+ggplot(data=d, aes(x=n, fill=id)) + geom_freqpoly(bins=30) + labs(title="frequency")
+```
+
+What if we could take the line elements of the frequency plot and combine that with the visual aesthetics of the area plot? First, I'll introduce the round-about method that I trial and errored my way to get a solution, and then provide a much simpler and elegant solution provided within the default framework of the area plot functionality of ggplot2:
+
+First, the long way. Build the frequency distributions for each sample from the freq_poly() output:
+
+```{r}
+gg.data <- data.frame(
+	ggplot_build(
+		ggplot(data=d, aes(x=n, color=id)) + geom_freqpoly(bins=30)
+		)$data
+	)
+```
+
+Here's a snippet of that data:
+
+```{r}
+head(gg.data)
+```
+
+Now that you have the counts at each bin position (x-variable), you can use those coordinates to generate a filled area plot, but with the raw counts in each bin instead of the stacked counts:
+
+```{r, fig.width=4, fig.height=4}
+ggplot(data=gg.data, aes(x=x, y=count, group=group)) +
+	geom_line(aes(color=colour)) +
+	geom_polygon(aes(fill=colour)) +
+	scale_fill_manual(name="id", labels=c("A","B","C"), values=unique(gg.data$colour)) +
+	scale_color_manual(name="id", labels=c("A","B","C"), values=unique(gg.data$colour))
+```
+
+Now, the easy way. From my multiple hours of trial and error, please consider this a lesson in thoroughly  reading and understanding what parameters are available to you. You might find that the functionality that you thought was missing, was hiding in plain sight:
+
+```{r, fig.width=4, fig.height=4}
+ggplot(data=d, aes(x=n, fill=id)) + 
+	geom_area(bins=30, stat="bin", position="identity") + 
+	labs(title="area")
+```
+
+And to play with visibility a bit:
+
+```{r, fig.width=4, fig.height=4}
+ggplot(data=d, aes(x=n, fill=id, alpha=id)) + 
+	geom_area(bins=30, stat="bin", position="identity") + 
+	scale_alpha_manual(values=c(0.25,0.5,1.0)) + 
+	labs(title="area")
+```
+
+Now, to view the different plots together. I've also included representative CDF and density plots so that the different ways to visualize count (or density data) might be visualized):
+
+```{r, fig.width=4, fig.height=4, echo=FALSE}
+	ggplot(data=d, aes(x=n, fill=id)) + geom_histogram(binwidth=5) + labs(title="histogram (stacked)")
+	ggplot(data=d, aes(x=n, fill=id)) + geom_histogram(binwidth=5, position="identity", alpha=0.5) + labs(title="histogram (identity)")
+	ggplot(data=d, aes(x=n, fill=id)) + geom_area(bins=30, stat="bin") + labs(title="area (stacked)")
+	ggplot(data=d, aes(x=n, fill=id, alpha=id)) + geom_area(bins=30, stat="bin", position="identity") + scale_alpha_manual(values=c(0.25,0.5,1.0)) + labs(title="area (identity)")
+	ggplot(data=d, aes(x=n, color=id, fill=id, alpha=id)) + geom_density() + scale_alpha_manual(values=rep(0.25,times=3)) + labs(title="density")
+	ggplot(data=d, aes(x=n, color=id)) + stat_ecdf() + labs(title="ecdf")
+```
+
+Each of the plots tells a different different story from the others, some more dramatically than others. For example, it is clearer from the density and cumulative distribution plots that samples A and B are more similarly distributed to each other than they are to C. However, the number of counts in each bin are retained by the histograms and area plots. In the end, a combination of multiple plots may be required to more clearly describe the similarity or differences of various distribtuions.

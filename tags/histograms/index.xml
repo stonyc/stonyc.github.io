@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Histograms on Tony Chun</title>
+    <link>/tags/histograms/</link>
+    <description>Recent content in Histograms on Tony Chun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 06 Apr 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/histograms/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Area Plots and Histograms for Multiple Distributions</title>
+      <link>/project/area-plots-and-histograms-for-multiple-distributions/</link>
+      <pubDate>Fri, 06 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/project/area-plots-and-histograms-for-multiple-distributions/</guid>
+      <description>As a first post, I thought that I would go over a few different ways to visualize multiple distributions using histograms and area plots, as well as how different parameters might change how you view and interpret that data. In addition, perhaps you might learn from mistakes that I made along the way.
+First, let’s load some required packages:
+require(&amp;quot;ggplot2&amp;quot;)## Loading required package: ggplot2Now, let’s generate three slightly different normal distributions for this example:</description>
+    </item>
+    
+  </channel>
+</rss>
